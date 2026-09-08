@@ -3,7 +3,7 @@
 Solves for the muscle forces F = (F1, F2, F3) -- Brachialis, Biceps Brachii,
 and Brachioradialis -- that minimize the physiological cost function
 
-    u = sum_i ( F_i / PCSA_i ) ** n
+    u = ( sum_i ( F_i / PCSA_i ) ** n ) ** (1 / n)
 
 subject to moment equilibrium about the elbow (sum M = 0) and the
 physiological requirement that muscle forces are nonnegative (F_i >= 0).
@@ -19,7 +19,7 @@ from scipy.optimize import minimize
 
 
 def _cost_func(F, pcsa, n):
-    return np.sum((F / pcsa) ** n)
+    return np.sum((F / pcsa) ** n) ** (1.0 / n)
 
 
 def solve_forearm_forces(
@@ -34,8 +34,8 @@ def solve_forearm_forces(
     pcsa=(8.4, 7.8, 4.7),
 ):
     """Solve for the muscle forces F=(F1,F2,F3) that minimize
-    u = sum((F/pcsa)**n), subject to moment equilibrium about the elbow and
-    F >= 0.
+    u = (sum((F/pcsa)**n))**(1/n), subject to moment equilibrium about the
+    elbow and F >= 0.
 
     n: exponent of the physiological cost function
     F0: initial guess for (F1, F2, F3); defaults to (0, 0, 0)
