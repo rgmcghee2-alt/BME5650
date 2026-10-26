@@ -1,0 +1,7 @@
+,,RMSE (GPa),MAE (GPa),R2
+Currey power law,train,4.296,3.228,0.705
+Currey power law,test,4.502,3.404,0.655
+GBR default,train,2.22,1.692,0.921
+GBR default,test,4.23,3.084,0.696
+GBR tuned,train,3.197,2.388,0.837
+GBR tuned,test,4.132,3.032,0.71
