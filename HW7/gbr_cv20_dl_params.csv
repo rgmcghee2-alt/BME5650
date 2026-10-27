@@ -1,0 +1,9 @@
+param,value
+learning_rate,0.2
+max_depth,2.0
+min_samples_leaf,10.0
+n_estimators,20.0
+subsample,0.7
+cv_RMSE_GPa,3.934559765498564
+importance_Ca,0.6927381395211375
+importance_Vf,0.30726186047886245
